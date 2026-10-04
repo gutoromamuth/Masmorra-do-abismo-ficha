@@ -1,0 +1,132 @@
+ /* padding e borda passam a contar dentro da largura */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    /* Chrome, Safari, Edge, Opera */
+    input[type=number]::-webkit-outer-spin-button,
+    input[type=number]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    /* Firefox */
+
+
+    /* coisas basicas*/
+    p {
+      font-size: clamp(0.5rem, calc(5vw - 1rem), 0.8rem);
+    }
+    .interactive_text {
+      grid-column: 1 / -1;
+    }
+    .pontos_restantes{
+      color: crimson;
+    }
+    input[type=number] {
+      -moz-appearance: textfield;
+      appearance: textfield;
+    }
+
+    body {
+      background: linear-gradient(to bottom,rgb(0, 0, 0), rgb(99, 9, 28));
+      background-attachment: fixed;
+      min-height: 100vh;
+    }
+
+    nav {
+      background-color: crimson;
+      outline: 5px solid crimson;
+    }
+
+    /* Pai com largura responsiva, centralizado na página */
+    .bloco {
+      width: min(92%, 900px);
+      margin: 0 auto;
+      background-color: rgba(233, 9, 54, 0.18);
+      outline: 1px solid crimson;
+      padding: 3px;
+      border-radius: 4px;
+      box-shadow: 0 0 10px 2px rgba(220, 20, 60, 0.6);
+    }
+
+    .isometra-regular {
+      font-family: "Isometra", serif;
+      font-weight: 400;
+      font-style: normal;
+    }
+
+    .caixa {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: rgb(255, 255, 255);
+      font-size: clamp(0.7rem, 2.8vw, 1rem); /* clamp(mínimo, ideal, máximo) */
+      outline: 1px solid rgba(220, 20, 60, 0.1);
+      padding: clamp(4px, 1vw, 12px);
+      margin: 2px;
+      border-radius: 2px;
+      text-align: center;
+      font-family: "Isometra", serif;
+      font-weight: 400;
+      font-style: normal;
+      min-width: 0; /* deixa o conteúdo encolher dentro do grid */
+    }
+
+    .areas-nomeadas {
+      display: grid;
+      background-color: rgba(212, 16, 55, 0.3);
+      border-radius: 3px;
+      grid-template-areas:
+        "cabecalho cabecalho"
+        "foto-p    status"
+        "foto-p    atributos"
+        "atributos_sc atributos_sc";
+      /* minmax(0, ...) permite a coluna ficar menor que o conteúdo */
+      grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+      grid-template-rows: auto;
+    }
+
+    .cabecalho { grid-area: cabecalho; }
+    .status    { grid-area: status; }
+    .atributos { grid-area: atributos; }
+    .atributos_sc {grid-area: atributos_sc;}
+
+    .foto-personagem {
+      grid-area: foto-p;
+      display: grid;
+      place-items: center; /* centraliza o conteúdo (foto) no meio da caixa */
+    }
+
+    .atributos {
+      display: flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      
+    }
+
+    .atributos_InputBox {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+      align-items: center;
+      gap: 6px;
+      background-color: rgba(0, 0, 0, 0.5);
+      border-radius: 3px;
+      padding: clamp(4px, 1.5vw, 10px);
+      margin: 2px;
+      font-size: clamp(0.8rem, 2.5vw, 1.2rem);
+      text-align: left;
+    }
+
+    .input_basic {
+      max-width: 3.2em;
+      min-width: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      color: white;
+      flex-grow: 1;
+      border: 1px solid crimson;
+      border-radius: 4px;
+      padding: 4px;
+      font-size: 16px;
+      text-align: center;
+      cursor: pointer;
+    }
